@@ -39,3 +39,29 @@ Walny, J., Frisson, C., West, M., Kosminsky, D., Knudsen, S., Carpendale, S., & 
 (2019). Data Changes Everything: Challenges and Opportunities in Data Visualization Design
 Handoff. "IEEE Transactions on Visualization and Computer Graphics". 1-11.
 http://hdl.handle.net/1880/110696
+
+## Re-sources:
+*these are all links to documentation and info on stuff*
+
+
+**WebGL:**
+* https://www.tutorialspoint.com/webgl/webgl_basics.html
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+* https://webglfundamentals.org/
+* https://webgl-shaders.com/index.html
+* https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_best_practices
+
+**RustRocket:**
+* https://rocket.rs/
+* https://rocket.rs/v0.5-rc/guide/
+
+**SQLite3:**
+* https://www.sqlite.org/index.html
+* https://docs.rs/crate/sqlite/latest
+
+**Containers:**
+* https://bastillebsd.org/
+* https://docs.freebsd.org/en/books/handbook/jails/
+
+
+
