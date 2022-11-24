@@ -30,6 +30,43 @@ This is the tech stack and the stuff that constructs the entire application at t
 3. web server(Rust rocket or other fast library)
 4. CLI tools.
 
+### TODO
+1. Define libs used
+2. create API for server/client.
+3. Find place to run/host code.
+4. Evaluate timeline to completion.
+5. Write documentation in markdown or latex.
+
+
+### Logic overview
+
+1. user loads site.
+2. Site loads, sends query to server for feedback/updates info.
+3. site updates UI
+4. User add/updates/modifies data
+5. git logs sent too the UI
+6. UI updates on page.
+
+
+*Web Page modules:*
+- WebGL window
+- WegGL instructions
+- WebGL controls/options
+- Git log/status window
+- Version Dropdown menu(changes to previous git version.)
+- Messages/feedback section.
+- Data Display tab/menu.
+- Login feature
+
+*server modules:*
+- cli git commands and updates.
+- file/data loading/parsing of csv
+- live messaging to from clients.
+- pings for new versions of repo/model.
+- SQLite3 database for users/data.
+
+
+
 
 
 ## sources:
