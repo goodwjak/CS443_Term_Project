@@ -1,0 +1,7 @@
+# Totally ignore the debug of rust.
+./app_server/target
+
+#Don't track the lock file either.
+./app_server/Cargo.lock
+
+
