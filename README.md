@@ -33,6 +33,7 @@ This is the tech stack and the stuff that constructs the entire application at t
 ### TODO
 1. Define libs used
 2. create API for server/client.
+    - Addded basic outline, see /app_server/src/main.rs
 3. Find place to run/host code.
 4. Evaluate timeline to completion.
 5. Write documentation in markdown or latex.
