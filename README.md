@@ -31,12 +31,10 @@ This is the tech stack and the stuff that constructs the entire application at t
 4. CLI tools.
 
 ### TODO
-1. Define libs used
-2. create API for server/client.
-    - Addded basic outline, see /app_server/src/main.rs
-3. Find place to run/host code.
-4. Evaluate timeline to completion.
-5. Write documentation in markdown or latex.
+1. Get data visual
+2. Add feedback section on server.
+3. put sample data in demo git repo.
+4. Clean up console logs.
 
 
 ### Logic overview
