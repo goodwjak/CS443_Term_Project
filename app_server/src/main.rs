@@ -138,6 +138,24 @@ fn git_log() -> String {
 }
 
 /*
+ * Input: None,
+ * Output: json.
+ * Desc: Generates current git log / status.
+ */
+#[get("/git_tags")]
+fn git_tags() -> String {
+    //Call the system git command.
+    let output = Command::new("git")
+        .arg("tag")
+        .arg("-l")
+        .output()
+        .expect("Failed to execute process.");
+    //Add error handling
+    let txt = String::from_utf8(output.stdout).unwrap();
+    txt
+}
+
+/*
  * Input: request.
  * Output: json.
  * Description: Sends out the newest X amount of feedback.
@@ -197,7 +215,7 @@ fn rocket() -> _ {
         .mount("/static", FileServer::from(relative!("/www")))
         .mount(
             "/read",
-            routes![data_csv, git_log, read_feedback, read_webgl_code],
+            routes![data_csv, git_log, git_tags, read_feedback, read_webgl_code],
         )
         .mount("/delete", routes![del_feedback])
         .mount("/create", routes![create_feedback])

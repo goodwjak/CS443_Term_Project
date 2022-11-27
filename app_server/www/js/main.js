@@ -197,7 +197,39 @@ function get_log() {
 
     //console.log(run_afunc());
     getData();
+    get_tags();//update the tags
 }
+
+//Gets the git tags and puts it into the page.
+function get_tags() {
+    console.log("get_tags()\n");
+    const tagDropDown = document.getElementById("tag");
+    //remove all child elements
+    tagDropDown.innerHTML = "";
+    function getData(pageId) {
+        console.log(pageId);
+        const myRequest = new Request(`/read/git_tags`);
+        fetch(myRequest)
+            .then((response) => response.text())
+            .then((text) => {
+                var tags = text.split("\n");
+                for(i=0; i < tags.length - 1; i++) {
+                    console.log("index: ");
+                    console.log(i);
+                    console.log(tags[i]);
+                    var op = document.createElement("option");
+                    op.setAttribute("value", tags[i].toString());
+                    op.innerText = tags[i].toString();
+                    tagDropDown.appendChild(op);
+                } 
+            });
+    }
+
+    //console.log(run_afunc());
+    getData();
+}
+
+
 
 function httpGetAsync(theUrl, callback)
 {
