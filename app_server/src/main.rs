@@ -2,6 +2,9 @@
 extern crate rocket;
 
 use rocket::form::Form;
+use rocket::fs::{relative, FileServer, NamedFile, Options};
+use rocket::response::status::NotFound;
+use std::path::{Path, PathBuf};
 //use rocket::http::RawStr;
 use std::process::Command;
 //mod preprocessing;
@@ -73,14 +76,25 @@ fn create_project(name: &str) -> String {
 
 //Read ROUTES
 
+#[get("/")]
+async fn index() -> Result<NamedFile, NotFound<String>> {
+    let path = Path::new("www/index.html");
+    NamedFile::open(&path)
+        .await
+        .map_err(|e| NotFound(e.to_string()))
+}
+
 /*
  * Input: NA
  * Output: html
  * Desc: Gets the website html and stuff.
  */
-#[get("/")]
-fn index() -> &'static str {
-    "HTML HERE"
+#[get("/static/<file..>")]
+async fn files(file: PathBuf) -> Result<NamedFile, NotFound<String>> {
+    let path = Path::new("www/").join(file);
+    NamedFile::open(&path)
+        .await
+        .map_err(|e| NotFound(e.to_string()))
 }
 
 /*
@@ -180,6 +194,7 @@ fn del_feedback() -> &'static str {
 fn rocket() -> _ {
     rocket::build()
         .mount("/", routes![index])
+        .mount("/static", FileServer::from(relative!("/www")))
         .mount(
             "/read",
             routes![data_csv, git_log, read_feedback, read_webgl_code],

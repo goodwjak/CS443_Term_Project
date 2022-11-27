@@ -178,7 +178,34 @@ function tringle_example(gl, canvas) {
 
 }
 
+//Gets the git log and puts it into the page.
+function get_log() {
+    console.log("get_log()\n");
+    const myArticle = document.getElementById("log-data");
+    function getData(pageId) {
+        console.log(pageId);
+        const myRequest = new Request(`/read/git_log`);
+        fetch(myRequest)
+            .then((response) => response.text())
+            .then((text) => {
+                text = text.replace(/</gi, "");
+                text = text.replace(/>/gi, "");
+                text = text.replace(/commit/gi, "<br><br>commit");
+                myArticle.innerHTML = text;
+            });
+    }
 
+    //console.log(run_afunc());
+    getData();
+}
 
-
-
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
