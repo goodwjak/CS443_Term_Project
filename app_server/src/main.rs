@@ -3,8 +3,8 @@ extern crate rocket;
 
 use rocket::form::Form;
 //use rocket::http::RawStr;
-
 use std::process::Command;
+//mod preprocessing;
 
 /*
  * #################################
@@ -21,6 +21,17 @@ struct Feedback {
     text: String,
 }
 
+// Holds a single csv record from the example data we chose.
+struct NatualGasRecord {
+    msn: String,
+    year: u64,
+    month: u64,
+    value: u64,
+    col_order: u64,
+    description: String,
+    units: String,
+}
+
 /*
  * ################################
  *  CRUD for website.
@@ -34,6 +45,7 @@ struct Feedback {
  * Output: feedback to clients.
  * Desc: Sends clients ping to update with created feedback.
  */
+#[post("/feedback")]
 fn create_feedback() -> &'static str {
     "Ok"
 }
@@ -43,6 +55,7 @@ fn create_feedback() -> &'static str {
  * Output: user data into file/database
  * Desc: Responds with results of creation.
  */
+#[post("/user")]
 fn create_user() -> &'static str {
     "Ok"
 }
@@ -52,8 +65,10 @@ fn create_user() -> &'static str {
  * Output: project data into file/database
  * Desc: Creates a new instance for project
  */
-fn create_project() -> &'static str {
-    "Ok"
+#[post("/project/<name>")]
+fn create_project(name: &str) -> String {
+    let tmp = format!("Project: {} confirmed", name);
+    tmp
 }
 
 //Read ROUTES
@@ -74,8 +89,21 @@ fn index() -> &'static str {
  * Desc: Reads the data from a csv file into json and sends it.
  */
 #[get("/data_csv/<filename>")]
-fn data_csv(filename: &str) -> &'static str {
-    "Nothing for now."
+fn data_csv(filename: &str) -> String {
+    let txt: String;
+    //ensure the file name is legit.
+    if filename.contains(".csv") {
+        //Call the system cat command.
+        let output = Command::new("cat")
+            .arg(filename)
+            .output()
+            .expect("Failed to execute process.");
+        //Add error handling
+        txt = String::from_utf8(output.stdout).unwrap();
+    } else {
+        txt = String::from("Error: not a filename");
+    }
+    txt
 }
 
 /*
