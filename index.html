@@ -10,8 +10,9 @@
     <!-- header and tab menu bar. -->
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+        <!--<a class="navbar-brand" href="#">
         <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        -->
        Collaborative Data Viz 
       </a>
     </nav>
@@ -20,17 +21,22 @@
 
     <!--Make container for what the webGL stuff will be in.-->
     <div class="col">
-        <p>WebGL window Version:0.1</p>
+        <div class="row-container">
+            <label for="tag">Project Tag:</label>
+            <select id="tag" name="">
+                <option value="default">Default</option>
+            </select>
+        </div>
+
         <canvas>Your browser doesn't seem to support canvas elements!</canvas>
         <span class="controls">
-            <button onclick="main()">Run WebGL</button>
-            <button onclick="stop_webgl()">Stop WebGL</button>
-            <button onclick="get_key()">Get Key</button>
-            <button onclick="get_log()">Get Log</button>
+            <button class="button-3d" onclick="main()">Run WebGL</button>
+            <button class="button-3d" onclick="stop_webgl()">Stop WebGL</button>
+            <button class="button-3d" onclick="get_key()">Get Key</button>
+            <button class="button-3d" onclick="get_log()">Get Log</button>
         <span>
     </div>
     <!--End of webGL stuff. -->
-
 
 
     <!-- START DATA CONTAINER -->
@@ -54,13 +60,19 @@
                 <p>Example msg</p>
                 <span class="time-left">00:00</span>
             </div>
-
+            
         </div>
+        <form>
+            <input type="text" id="feedback-data">
+        </form>
     </div>
     <!-- END OF FEEDBACK SECTION -->
 
     <div class="log">
         <p>LOGS</p>
+        <div id="log-data">
+            NO LOG DATA!
+        </div>
     <div>
 
     <div>
