@@ -4,4 +4,5 @@
 #Don't track the lock file either.
 /app_server/Cargo.lock
 
-
+#Don't track the example git repo
+/app_server/www/project
