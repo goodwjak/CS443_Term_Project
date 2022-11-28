@@ -35,7 +35,16 @@ This is the tech stack and the stuff that constructs the entire application at t
 3. Rocket Web Server 
 4. CLI tools.
 
-
+### TODO:
+*Things that might be nice for the next version*
+- SSH keys for the project dir for syncing to remote repos.
+- User Accounts for Public networks.
+- Dynamic Git Tag switching asyncronously.
+- Built in CSV parser/Upload menu.
+- Menu tab for visual variable adjustment.
+- More detailed statistics.
+- Multiple Project support from single server.
+- Shareable "EDIT" and "VIEW" links.
 
 ## sources:
 
