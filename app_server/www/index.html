@@ -33,7 +33,7 @@
         <span class="controls">
             <button class="button-3d" onclick="run_webgl()">Run WebGL</button>
             <button class="button-3d" onclick="stop_webgl()">Stop WebGL</button>
-            <button class="button-3d" onclick="load_model()">Load Model</button>
+            <button class="button-3d" onclick="load_stats()">Load Stats</button>
             <button class="button-3d" onclick="get_log()">GIT Update</button>
         <span>
     </div>
@@ -45,29 +45,29 @@
     <!-- END DATA CONTAINER -->
 
 
-    <!-- FEEDBACK SECTION -->
-    <div class="col">
-        <h2>Feedback:</h2>
-        <div id="feedback" class="fb-wrapper">
+    <!-- info SECTION -->
+    <div id="info-col" class="col">
+        <h2>INFO:</h2>
+        <div id="info" class="info-wrapper">
             <!--Example/start msg -->
-            <div class="fb-box">
-                <img src="#" alt="icon" class="right"></img>
-                <p>Example msg</p>
-                <span class="time-right">00:00</span>
+            <div class="info-box">
+                <h4>INSTRUCTIONS:</h4>
+                <p>
+                Run webgl: generates visualization of data.<br>
+                Stop webgl: Clears the color buffer.<br>
+                Load stats: Loads the webgl/js data stats into the DOM.<br>
+                GIT Update: updates with commit logs and project tags<br>
+                Project Tags: Dropdown to show history and current tag.<br>
+                </p>
+                <br>
             </div>
+            <div id="stats" class="info-box">
 
-            <div class="fb-box">
-                <img src="#" alt="icon" class="left"></img>
-                <p>Example msg</p>
-                <span class="time-left">00:00</span>
             </div>
-            
         </div>
-        <form>
-            <input type="text" id="feedback-data">
-        </form>
+
     </div>
-    <!-- END OF FEEDBACK SECTION -->
+    <!-- END OF info SECTION -->
 
     <div class="log">
         <p>LOGS</p>
