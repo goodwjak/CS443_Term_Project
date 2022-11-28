@@ -16,10 +16,15 @@ The projects goals:
 * Bridge the "gap" from the paper between Understanding --> design --> development of data visualizations
 
 
+##Version 1.0
+
+The new version of the functional collaborative data viz site is working!
+![Example data](./page.png "Natural Gas data")
+
 
 ### The Data:
 - Electrical data over time(for an example)
-- In CSV format or other parsable format
+- In json format or other parsable format
 - Limited in size for now.
 
 ### The Stack:
@@ -27,44 +32,8 @@ This is the tech stack and the stuff that constructs the entire application at t
 
 1. HTML/CSS frontend
 2. JS/webGL
-3. web server(Rust rocket or other fast library)
+3. Rocket Web Server 
 4. CLI tools.
-
-### TODO
-1. Get data visual
-2. Add feedback section on server.
-3. put sample data in demo git repo.
-4. Clean up console logs.
-
-
-### Logic overview
-
-1. user loads site.
-2. Site loads, sends query to server for feedback/updates info.
-3. site updates UI
-4. User add/updates/modifies data
-5. git logs sent too the UI
-6. UI updates on page.
-
-
-*Web Page modules:*
-- WebGL window
-- WegGL instructions
-- WebGL controls/options
-- Git log/status window
-- Version Dropdown menu(changes to previous git version.)
-- Messages/feedback section.
-- Data Display tab/menu.
-- Login feature
-
-*server modules:*
-- cli git commands and updates.
-- file/data loading/parsing of csv
-- live messaging to from clients.
-- pings for new versions of repo/model.
-- SQLite3 database for users/data.
-
-
 
 
 
