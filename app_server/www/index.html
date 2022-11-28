@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>cs443 data collab tool</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/main.js"></script>
+    <script src="/project/viz_code.js"></script>
 </head>
 <body>
     <!-- header and tab menu bar. -->
@@ -30,7 +31,7 @@
 
         <canvas>Your browser doesn't seem to support canvas elements!</canvas>
         <span class="controls">
-            <button class="button-3d" onclick="main()">Run WebGL</button>
+            <button class="button-3d" onclick="run_webgl()">Run WebGL</button>
             <button class="button-3d" onclick="stop_webgl()">Stop WebGL</button>
             <button class="button-3d" onclick="load_model()">Load Model</button>
             <button class="button-3d" onclick="get_log()">GIT Update</button>

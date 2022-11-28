@@ -17,19 +17,6 @@
 
 
 
-class Vertex {
-    constructor(x, y, z, r=0.0, g=0.0, b=0.0) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.r = r; //Red value
-        this.g = g; //Green value
-        this.b = b; //Blue value
-        this.s = s; //Scalar value 
-    }
-}
-
-
 
 
 function main(){
