@@ -16,6 +16,7 @@ use std::process::Command;
  */
 
 //Holds the timedate stamp of the feedback and it's text.
+/*
 #[derive(FromForm)]
 struct Feedback {
     day: u64,
@@ -23,9 +24,11 @@ struct Feedback {
     min: u64,
     text: String,
 }
+*/
 
 // Holds a single csv record from the example data we chose.
-struct NatualGasRecord {
+/*
+struct _NatualGasRecord {
     msn: String,
     year: u64,
     month: u64,
@@ -34,6 +37,7 @@ struct NatualGasRecord {
     description: String,
     units: String,
 }
+*/
 
 /*
  * ################################
@@ -51,27 +55,6 @@ struct NatualGasRecord {
 #[post("/feedback")]
 fn create_feedback() -> &'static str {
     "Ok"
-}
-
-/*
- * Input: Data for user
- * Output: user data into file/database
- * Desc: Responds with results of creation.
- */
-#[post("/user")]
-fn create_user() -> &'static str {
-    "Ok"
-}
-
-/*
- * Input: Data for project
- * Output: project data into file/database
- * Desc: Creates a new instance for project
- */
-#[post("/project/<name>")]
-fn create_project(name: &str) -> String {
-    let tmp = format!("Project: {} confirmed", name);
-    tmp
 }
 
 //Read ROUTES
@@ -188,13 +171,13 @@ fn read_webgl_code(version: u64) -> &'static str {
  * Input: str of feedback.
  * Output: Ack.
  * Description: Updates the recent feedback on the server.
- */
+ *
 #[post("/feedback", data = "<new_feedback>")]
 fn update_feedback(new_feedback: Form<Feedback>) -> &'static str {
     //Push data into our global memory/then append it too the file.
     "feedback!"
 }
-
+*/
 //Delete ROUTES
 
 /*
@@ -213,6 +196,7 @@ fn rocket() -> _ {
     rocket::build()
         .mount("/", routes![index])
         .mount("/static", FileServer::from(relative!("/www")))
+        .mount("/project", FileServer::from(relative!("/www/project")))
         .mount(
             "/read",
             routes![data_csv, git_log, git_tags, read_feedback, read_webgl_code],
