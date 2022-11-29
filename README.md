@@ -46,6 +46,13 @@ This is the tech stack and the stuff that constructs the entire application at t
 - Multiple Project support from single server.
 - Shareable "EDIT" and "VIEW" links.
 
+### Nice to have / Future:
+- PLY file parser
+- reimplimentation of polyhederon library.
+- get the code functional with class datasets.
+- 3d mouse controls for canvas windows.
+- CSV to json regex + parsing code/script.
+
 ## sources:
 
 **Data Changes Everything**
