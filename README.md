@@ -21,6 +21,44 @@ The projects goals:
 The new version of the functional collaborative data viz site is working!
 ![Example data](./page.png "Natural Gas data")
 
+##Instructions:
+This software is at this moment capable of being compiled on FreeBSD, Linux 
+and windows, but assums a bash or other unix style shell so windows will
+cause issues with pipes and git if not installed on the system.
+
+**requirements:**
+- Git version control.
+- Rust version 1.63 or newer.
+- Cargo
+- Rocket server
+- Access to ports
+- WebGL compadable browser
+
+**Building from source:**
+
+```
+git clone https://github.com/goodwjak/CS443_Term_Project.git
+cd CS443_Term_Project/app_server
+cargo build --release
+```
+**Running a debugging version:**
+
+```
+git clone https://github.com/goodwjak/CS443_Term_Project.git
+cd CS443_Term_Project/app_server
+cargo run
+```
+
+**Building custom visualizations:**
+
+1. go into the app_server/www/project directory
+2. edit the javascript file and webGL code.
+3. refreash the webpage(you shouldn't need to restart the server)
+4. see your new data visualization.
+
+
+
+
 
 ### The Data:
 - Electrical data over time(for an example)
