@@ -21,7 +21,7 @@ The projects goals:
 The new version of the functional collaborative data viz site is working!
 ![Example data](./page.png "Natural Gas data")
 
-##Instructions:
+## Instructions:
 This software is at this moment capable of being compiled on FreeBSD, Linux 
 and windows, but assums a bash or other unix style shell so windows will
 cause issues with pipes and git if not installed on the system.
